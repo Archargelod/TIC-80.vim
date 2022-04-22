@@ -16,7 +16,7 @@ setlocal suffixesadd+=.lua
 
 
 if tic80#get_config('imitate_console', 1)
-  setlocal colorcolumn=33
+  setlocal colorcolumn=59
   setlocal noexpandtab
   setlocal shiftwidth=0
   setlocal tabstop=1
