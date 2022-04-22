@@ -1,4 +1,4 @@
-*pico8.txt*	The plugin package for PICO-8 programming.
+*tic80.txt*	The plugin package for TIC-80 programming.
 
 
 Author : Bakudankun
@@ -6,46 +6,46 @@ License: MIT License
 
 
 ==============================================================================
-CONTENTS						*pico8-contents*
+CONTENTS						*tic80-contents*
 
-INTRODUCTION						|pico8|
-COMMANDS						|pico8-commands|
-OPTIONS							|pico8-options|
-FAQ							|pico8-faq|
+INTRODUCTION						|tic80|
+COMMANDS						|tic80-commands|
+OPTIONS							|tic80-options|
+FAQ							|tic80-faq|
 
 
 ==============================================================================
-INTRODUCTION						*pico8*
+INTRODUCTION						*tic80*
 
-PICO-8.vim is a plugin package that adds support for PICO-8 cartridge files.
+TIC-80.vim is a plugin package that adds support for TIC-80 cartridge files.
 
 - Proper syntax highlighting for .p8 files as well as folding
   (Check if 'foldmethod' is "syntax")
-- Make vim visually imitate the PICO-8 console
+- Make vim visually imitate the TIC-80 console
 - Colorize graphics data
 - Keymaps to easily input symbols with Shift+[A-Z]
-- :Pico8Run command to run the current file in PICO-8
+- :tic80Run command to run the current file in TIC-80
 
 
 ==============================================================================
-COMMANDS						*pico8-commands*
+COMMANDS						*tic80-commands*
 
-:Pico8Run [options]					*:Pico8Run*
-			Open PICO-8 and run the current file. Logs by
+:tic80Run [options]					*:tic80Run*
+			Open TIC-80 and run the current file. Logs by
 			"printh()" are output to the opened |terminal-window|.
 			On Vim, options for |:terminal| like "++close" are
 			available. Also see |term++close|.
 			On Neovim, |++opt| and |+cmd| are available.
 			Note: This requires |+terminal| feature or Neovim, as
-			well as |g:pico8_config.pico8_path| to be set properly.
+			well as |g:tic80_config.tic80_path| to be set properly.
 
 
 ==============================================================================
-OPTIONS							*pico8-options*
+OPTIONS							*tic80-options*
 
-Every options are contained in *g:pico8_config* dictionary.
+Every options are contained in *g:tic80_config* dictionary.
 
-					*g:pico8_config.colorize_graphics*
+					*g:tic80_config.colorize_graphics*
 colorize_graphics	(default: 1)
 			If |TURE|, graphics data under "__gfx__" and
 			"__label__" sections are colorized.
@@ -53,32 +53,32 @@ colorize_graphics	(default: 1)
 			color.
 			Note: This feature may make vim slow.
 
-					*g:pico8_config.imitate_console*
+					*g:tic80_config.imitate_console*
 imitate_console		(default: 1)
-			If |TRUE|, vim imitates PICO-8 console display. Tab
+			If |TRUE|, vim imitates TIC-80 console display. Tab
 			width is set to 1, and 'colorcolumn' shows the border
-			at the width of PICO-8 console.
+			at the width of TIC-80 console.
 
-					*g:pico8_config.pico8_path*
-pico8_path		(default: "pico8")
-			Path to the PICO-8 executable. This is used for
-			|:Pico8Run|.
+					*g:tic80_config.tic80_path*
+tic80_path		(default: "tic80")
+			Path to the TIC-80 executable. This is used for
+			|:tic80Run|.
 
-					*g:pico8_config.use_keymap*
+					*g:tic80_config.use_keymap*
 use_keymap		(default: 1)
-			If |TRUE|, the included keymap for PICO-8 is set to
+			If |TRUE|, the included keymap for TIC-80 is set to
 			'keymap'. With this keymap, you can insert symbols
-			with uppercase letters like in the PICO-8 console. Hit
+			with uppercase letters like in the TIC-80 console. Hit
 			<Ctrl-^> to switch the keymap feature (|i_CTRL-^|).
 
 
 ==============================================================================
-FAQ							*pico8-faq*
+FAQ							*tic80-faq*
 
 ------------------------------------------------------------------------------
-Q:	How to use pico8 syntax highlighting in a plain lua file?
+Q:	How to use tic80 syntax highlighting in a plain lua file?
 
-A:	Add a |modeline| that sets ft=pico8 at the top or bottom of the lua
+A:	Add a |modeline| that sets ft=tic80 at the top or bottom of the lua
 	file. A concrete example cannot be written here because that will be
 	applied to this help file. Sorry!
 

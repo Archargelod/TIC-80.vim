@@ -4,17 +4,17 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 
-function! pico8#get_config(key, ...) abort
+function! tic80#get_config(key, ...) abort
   let default = a:0 > 0 ? a:1 : 0
-  if !has_key(g:, 'pico8_config')
+  if !has_key(g:, 'tic80_config')
     return default
   endif
-  return get(g:pico8_config, a:key, default)
+  return get(g:tic80_config, a:key, default)
 endfunction
 
 
-function! pico8#run(mods, options) abort
-  let cmdline = '"' . pico8#get_config('pico8_path', 'pico8') . '" -run ' . expand('%:p:S')
+function! tic80#run(mods, options) abort
+  let cmdline = '"' . tic80#get_config('tic80_path', 'tic80') . '" ' . expand('%:p:S')
   if has('win32')
     " PICO-8 on Windows does not output logs if run directly.
     let cmdline = $ComSpec . ' /C "' . cmdline . '"'

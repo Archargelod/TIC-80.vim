@@ -1,6 +1,6 @@
 scriptencoding utf-8
 
-let b:keymap_name = 'PICO-8'
+let b:keymap_name = 'TIC-80'
 
 loadkeymap
 A	<Char-0x2588>			█

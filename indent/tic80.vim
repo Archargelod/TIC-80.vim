@@ -15,14 +15,14 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 
-setlocal indentexpr=GetPico8Indent()
+setlocal indentexpr=Gettic80Indent()
 
 
-function! GetPico8Indent() abort
+function! Gettic80Indent() abort
   let s:save_cursor = getcurpos()
 
   " Do not indent if the cursor is not in the lua code
-  if getline(1) =~# '^pico-8 cartridge' &&
+  if getline(1) =~# '^TIC-80 cartridge' &&
         \ search('\(^__lua__$\)\|^__\l\+__$', 'bcnp') != 2
     return 0
   endif

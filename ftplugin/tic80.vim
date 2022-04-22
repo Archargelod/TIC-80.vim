@@ -12,10 +12,10 @@ set cpo&vim
 let b:did_ftplugin = 1
 
 
-setlocal suffixesadd+=.p8
+setlocal suffixesadd+=.lua
 
 
-if pico8#get_config('imitate_console', 1)
+if tic80#get_config('imitate_console', 1)
   setlocal colorcolumn=33
   setlocal noexpandtab
   setlocal shiftwidth=0
@@ -23,14 +23,14 @@ if pico8#get_config('imitate_console', 1)
   let b:undo_ftplugin .= ' | setlocal cc< et< sw< ts<'
 endif
 
-if pico8#get_config('use_keymap', 1)
-  setlocal keymap=pico8
+if tic80#get_config('use_keymap', 1)
+  setlocal keymap=tic80
   let b:undo_ftplugin .= ' | setlocal kmp<'
 endif
 
 if has('terminal') || has('nvim')
-  command! -buffer -nargs=* Pico8Run call pico8#run(<q-mods>, [<f-args>])
-  let b:undo_ftplugin .= ' | delcommand Pico8Run'
+  command! -buffer -nargs=* Tic80Run call tic80#run(<q-mods>, [<f-args>])
+  let b:undo_ftplugin .= ' | delcommand tic80Run'
 endif
 
 
